@@ -164,3 +164,19 @@
 .blog-post-prose.fw-prose blockquote {
   font-size: 1.0625rem;
 }
+
+/* Mermaid diagrams take their colors from the framework's --fw-* tokens;
+   point those at this site's palette so diagrams match the page in both
+   modes. Scoped to diagrams so the rest of the prose is unchanged. */
+.blog-post-prose .fw-mermaid {
+  --fw-bg: var(--background);
+  --fw-bg-subtle: var(--muted);
+  --fw-fg: var(--foreground);
+  --fw-muted: var(--muted-foreground);
+  --fw-border: var(--border);
+  --fw-border-strong: color-mix(in oklab, var(--foreground) 22%, var(--background));
+  --fw-card: var(--card);
+  --fw-code-bg: var(--muted);
+  --fw-primary: var(--primary);
+  --fw-primary-subtle: color-mix(in oklab, var(--primary) 10%, transparent);
+}
